@@ -1,0 +1,5 @@
+# Creating AWS Budget using Below AWS CLI Cmd:
+aws budgets create-budget \
+    --account-id $AWS_ACCOUNT_ID \
+    --budget file://aws/json/AWS_Budgets/budget.json \
+    --notifications-with-subscribers file://aws/json/AWS_Budgets/budget-notifications-with-subscribers.json
