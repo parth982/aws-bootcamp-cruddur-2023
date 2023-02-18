@@ -1,13 +1,13 @@
 # Creating SNS Topic
-aws sns create-topic --name billing-alarm-topic
+[aws sns create-topic --name billing-alarm-topic]
 
 # Making its connect with Endpoint with protocol as email
-aws sns subscribe \
+[aws sns subscribe \
     --topic-arn=TopicARN \
     --protocol=email \
-    --notification-endpoint=parthghatge982@gmail.com
+    --notification-endpoint=parthghatge982@gmail.com]
 
 # Creating Billing Alarm from alarm_config.json file as per its configuration.
 # Before this Update AlarmActions in json File to SNS TopicARN.
 # Use Below Cmd to create Billing Alarm:
-aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/AWS_Billing_Alarm/alarm_config.json
+[aws cloudwatch put-metric-alarm --cli-input-json file://aws/json/AWS_Billing_Alarm/alarm_config.json]
