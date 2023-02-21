@@ -18,6 +18,7 @@ services:
     volumes:
       - ./frontend-react-js:/frontend-react-js
     
+    # To install DynamoDB Local Service 
   dynamodb-local:
     # https://stackoverflow.com/questions/67533058/persist-local-dynamodb-data-in-volumes-lack-permission-unable-to-open-databa
     # We needed to add user:root to get this working.
@@ -31,7 +32,7 @@ services:
       - "./docker/dynamodb:/home/dynamodblocal/data"
     working_dir: /home/dynamodblocal
 
-
+  # To install Postgres Service
   db:
     image: postgres:13-alpine
     restart: always
@@ -51,6 +52,7 @@ networks:
     driver: bridge
     name: cruddur
 
+# creates a named volume called db. The local driver is used to store the volume data on the host machine.
 volumes:
   db:
     driver: local
